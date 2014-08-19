@@ -1,0 +1,23 @@
+<%= form_for @todo do |f| %>
+ <% if @todo.errors.any? %>
+   <h2> Errors:</h2>
+   <ul>
+    <% @todo.errors.full_messages.each do |message| %>
+     <li><%= message %></li>
+     
+    <% end %>
+   </ul>
+ <% end %> 
+
+ <p>
+  <%= f.label :name %><br/>
+  <%= f.text_field :name %>
+ </p>
+ <p>
+  <%= f.label :status %><br/>
+  <%= f.text_field :status %>
+ </p>
+ <div class="actions">
+  <%= f.submit %>
+ </div>
+<% end %>
